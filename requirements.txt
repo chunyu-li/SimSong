@@ -1,0 +1,6 @@
+eyed3
+keras
+numpy
+pandas
+Pillow
+scikit_learn
