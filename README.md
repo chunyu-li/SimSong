@@ -7,7 +7,7 @@ The project implements the function of recommending similar songs based on deep 
 ### Basic implementation idea
 
 1. Utilize [Sox](http://sox.sourceforge.net/) to convert audio files to image files in spectrogram form. A *spectrogram* is a visual representation of the spectrum of frequencies of a signal as it varies with time.
-2. Use a pretrained CNN model to perform feature extraction. After fully connected layer, a feature vector representing song features will be output (based on TensorFlow framework).
+2. Use a pretrained CNN model to perform feature extraction. After fully connected layer, a feature vector representing song features will be output (based on [TensorFlow](https://www.tensorflow.org/) framework).
 3. Calculate cosine similarity between the given song (expected for recommending) and each of song in our dataset. Rank the scores and return top 4 songs.
 
 ### Dependency

@@ -1,11 +1,7 @@
-# -*- coding: utf-8 -*-
-# @Time    : 2018/5/16 10:24
-# @File    : get_genre.py
 import glob
 import os
 from subprocess import run, PIPE
 
-import eyed3
 import numpy as np
 from PIL import Image
 
@@ -118,20 +114,11 @@ class GetGenre(object):
                 counter += 1
             delete_file(input_file)
 
-        # 判断是否为单声道文件
-        def is_mono(filename):
-            audio_file = eyed3.load(filename)
-            return audio_file.info.mode == 'Mono'
-
         # 导入模型
         model = load_model(self.model_classify_genre)
 
-        # Create and save spectrogram
-        if not is_mono(self.path_track):
-            # 判断是否为单声道文件
-            set_to_mono(self.path_track, self.file_mono_prediction)
-        else:
-            self.file_mono_prediction = self.path_track
+        # Change original MP3 file to mono version
+        set_to_mono(self.path_track, self.file_mono_prediction)
 
         # 转换为频谱图
         audio_to_spect(self.file_mono_prediction, self.dir_spectrum_prediction)
