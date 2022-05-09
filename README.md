@@ -13,8 +13,27 @@ The project implements the function of recommending similar songs based on deep 
 ### Dependency
 
 ```shell
-# Execute this command under root directory to install related dependencies
+# Execute this command under root directory to install related python dependencies
 pip install -r requirements.txt
+```
+
+You also need to install command line tool SoX on your machine. The installation steps of different platforms are given below.
+
+#### Windows
+
+There is not a convenient package manager on Windows. You should go to official site of [Sox](http://sox.sourceforge.net/) to download it manully.
+
+#### Mac OS
+
+```bash
+brew install sox
+```
+
+#### Linux
+
+```bash
+sudo apt install sox
+sudo apt install libsox-fmt-mp3
 ```
 
 ### Usage at a glance
